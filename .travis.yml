@@ -1,6 +1,3 @@
-os:
-  - linux
-  - linux-ppc64le
 sudo: false
 language: node_js
 node_js:
@@ -12,6 +9,14 @@ node_js:
   - "6"
   - "8"
   - "node"
+matrix:
+  include:
+  - os: linux-ppc64le
+    node_js: "6"
+  - os: linux-ppc64le
+    node_js: "8"
+  - os: linux-ppc64le
+    node_js: "node"
 
 env:
   - CXX=g++-4.8
